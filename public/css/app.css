@@ -1,4 +1,72 @@
-body {
+/* ------- MIX ------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+}
+
+p {
+  font-size: 30px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: greenyellow;
+}
+
+/* ------- COLOR -------- */
+
+/* -------- HEADER ------- */
+
+header {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header .logo {
+  display: flex;
+  justify-content: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav li {
+  display: inline-block;
+}
+
+/* ------- MAIN -------- */
+
+main {
   background-color: red;
+}
+
+section li {
+  height: 50px;
+  width: 31%;
+  display: inline-block;
+  margin: 0 auto;
+  color: #01455a;
+  text-transform: uppercase;
+}
+
+section li img {
+  max-width: 100%;
 }
 

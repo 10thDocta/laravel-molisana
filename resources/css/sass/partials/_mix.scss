@@ -1,0 +1,26 @@
+/* ------- MIX ------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+p {
+    font-size: 30px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: greenyellow;
+}

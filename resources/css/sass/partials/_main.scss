@@ -1,0 +1,19 @@
+/* ------- MAIN -------- */
+main {
+    background-color: red;
+}
+
+section {
+    li {
+        height: 50px;
+        width: 31%;
+        display: inline-block;
+        margin: 0 auto;
+        color: $name_prod;
+        text-transform: uppercase;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
