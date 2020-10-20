@@ -31,7 +31,7 @@ p {
 /* -------- HEADER ------- */
 
 header {
-  height: 100px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,21 +40,36 @@ header {
 header .logo {
   display: flex;
   justify-content: center;
+  margin-top: auto;
 }
 
 header nav {
   display: flex;
   justify-content: center;
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 
-header nav li {
-  display: inline-block;
+header nav ul {
+  height: 50px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+header nav ul li {
+  font-size: 26px;
+}
+
+header nav ul li:hover {
+  background-color: aqua;
 }
 
 /* ------- MAIN -------- */
 
 main {
-  background-color: red;
+  background-image: url("/img/main-bg.jpg");
 }
 
 section li {

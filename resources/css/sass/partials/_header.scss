@@ -1,6 +1,6 @@
 /* -------- HEADER ------- */
 header {
-    height: 100px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,13 +8,28 @@ header {
     .logo {
         display: flex;
         justify-content: center;
+        margin-top: auto;
     }
 
     nav {
         display: flex;
         justify-content: center;
-        li {
-            display: inline-block;
+        margin-top: auto;
+        margin-bottom: 15px;
+
+        ul {
+            height: 50px;
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            li {
+                font-size: 26px;
+                &:hover {
+                    background-color: aqua;
+                }
+            }
         }
     }
 }
