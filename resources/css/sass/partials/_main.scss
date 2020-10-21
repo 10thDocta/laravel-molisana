@@ -12,7 +12,11 @@ section {
         color: $name_prod;
         text-transform: uppercase;
 
-        img {
+        &:hover img.img-bg {
+            max-width: 130%;
+        }
+
+        img.img-bg {
             max-width: 100%;
         }
     }

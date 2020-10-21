@@ -1,7 +1,6 @@
 @extends('layout.main')
 
 @php 
-  $data = config('pasta')
 @endphp 
 
 @section('title')
@@ -11,48 +10,32 @@
 
 @section('main')
       
-        <main>
-          <div class="container">
-                <section>
-                      <h3>LE LUNGHE</h3>
-                      <ul>               
-                          @foreach ($data as $d)
-                              @if ($d["tipo"] == "lunga")
-                                  <li>
-                                      <img src="{{$d['src']}}" alt=""> 
-                                  </li>
-                              @endif
-                          @endforeach                    
-                      </ul>
-                </section>
-
-                <section>
-                  <h3>LE CORTE</h3>
-                  <ul>               
-                      @foreach ($data as $d)
-                          @if ($d["tipo"] == "corta")
-                              <li>
-                                  <img src="{{$d['src']}}" alt=""> 
-                              </li>
-                          @endif
-                      @endforeach                    
-                  </ul>
-            </section>
-
+    <main>
+        <div class="container">
             <section>
-              <h3>LE CORTISSIME</h3>
-              <ul>               
-                  @foreach ($data as $d)
-                      @if ($d["tipo"] == "cortissima")
-                          <li>
-                              <img src="{{$d['src']}}" alt=""> 
-                          </li>
-                      @endif
-                  @endforeach                    
-              </ul>
+               @if (!empty($paste))
+
+               @foreach ($paste as $key => $tipopasta)
+               <h2>{{$key}} </h2>    
+               <ul>
+
+                @foreach ($tipopasta as $prodotto)
+                    <li>
+                        <img src="{{$prodotto["src"]}} " alt="">
+                    <a href="prodotti/show/{{$prodotto["id"]}}"> <h3> {{$prodotto["id"]}} </h3>  </a>
+                    </li>
+                @endforeach
+
+               </ul>
+
+
+               @endforeach
+
+                   
+               @endif     
             </section>
-          </div>
-        </main>
+        </div>
+    </main>
 
 @endsection
     {{-- /main --}}

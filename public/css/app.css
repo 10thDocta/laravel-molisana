@@ -81,7 +81,11 @@ section li {
   text-transform: uppercase;
 }
 
-section li img {
+section li:hover img.img-bg {
+  max-width: 130%;
+}
+
+section li img.img-bg {
   max-width: 100%;
 }
 

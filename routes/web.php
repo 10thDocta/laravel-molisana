@@ -13,9 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('index');
+// })->name('home');
+
 Route::get('/', function () {
-    return view('index');
+
+    $data = config('pasta');
+    $paste = [];
+
+    foreach ($data as $key => $prodotto) {
+        $prodotto['id'] = $key;
+        $paste[$prodotto['tipo']][] = $prodotto;
+    }
+
+    return view('index', ['paste' => $paste]);
+
 })->name('home');
+
 
 Route::get('/prodotti', function () {
     return view('prodotti');
