@@ -1,23 +1,27 @@
 /* ------- MAIN -------- */
 main {
-    background-image: url("/img/main-bg.jpg");
+    .bg-img {
+        background-image: url("/img/main-bg.jpg");
+    }
 }
 
 section {
-    li {
-        height: 50px;
-        width: 31%;
-        display: inline-block;
-        margin: 0 auto;
-        color: $name_prod;
-        text-transform: uppercase;
+    ul.pasta-list {
+        li.pasta-list__item {
+            height: 50px;
+            width: 31%;
+            display: inline-block;
+            margin: 0 auto;
+            color: $name_prod;
+            text-transform: uppercase;
 
-        &:hover img.img-bg {
-            max-width: 130%;
-        }
+            // &:hover img.img-bg {
+            //     max-width: 130%;
+            // }
 
-        img.img-bg {
-            max-width: 100%;
+            img.img-bg {
+                max-width: 100%;
+            }
         }
     }
 }

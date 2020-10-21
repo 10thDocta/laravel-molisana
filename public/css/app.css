@@ -63,29 +63,44 @@ header nav ul li {
 }
 
 header nav ul li:hover {
-  background-color: aqua;
+  background-color: #b3e5fc;
 }
 
 /* ------- MAIN -------- */
 
-main {
+main .bg-img {
   background-image: url("/img/main-bg.jpg");
 }
 
-section li {
+section ul.pasta-list li.pasta-list__item {
   height: 50px;
   width: 31%;
   display: inline-block;
   margin: 0 auto;
-  color: #01455a;
+  color: #b3e5fc;
   text-transform: uppercase;
 }
 
-section li:hover img.img-bg {
-  max-width: 130%;
+section ul.pasta-list li.pasta-list__item img.img-bg {
+  max-width: 100%;
 }
 
-section li img.img-bg {
+/* ------- MAIN -------- */
+
+main .img-hero {
+  display: block;
   max-width: 100%;
+}
+
+main .descrizione {
+  background-color: #b7d9e3;
+}
+
+main .descrizione__text {
+  margin-bottom: 30px;
+  padding: 0 100px 60px 100px;
+  font-size: 28px;
+  color: #002d73;
+  line-height: 35px;
 }
 

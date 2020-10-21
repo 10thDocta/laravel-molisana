@@ -33,8 +33,27 @@ Route::get('/', function () {
 
 
 Route::get('/prodotti', function () {
-    return view('prodotti');
+
+    $data = config('pasta');
+    $paste = [];
+
+    foreach ($data as $key => $prodotto) {
+        $prodotto['id'] = $key;
+        $paste[$prodotto['tipo']][] = $prodotto;
+    }
+
+    return view('prodotti', ['paste' => $paste]);
 })->name('prodotti');
+
+
+Route::get('/prodotti/show/{id}', function ($id) {
+
+    $data = config("pasta.$id");
+    // dd($data);
+
+    return view('prodotto', ['prodotto' => $data, 'id' => $id]);
+})->name('prodotto');
+
 
 Route::get('/news', function () {
     return view('news');

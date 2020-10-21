@@ -1,8 +1,5 @@
 @extends('layout.main')
 
-@php 
-@endphp 
-
 @section('title')
     Home
 @endsection
@@ -12,28 +9,29 @@
       
     <main>
         <div class="container">
-            <section>
-               @if (!empty($paste))
+            <div class="bg-img">
+                <section>
+                @if (!empty($paste))
 
-               @foreach ($paste as $key => $tipopasta)
-               <h2>{{$key}} </h2>    
-               <ul>
+                @foreach ($paste as $key => $tipopasta)
+                <h2>{{$key}} </h2>    
+                <ul class="pasta-list">
+                        @foreach ($tipopasta as $prodotto)
+                            <li class="pasta-list__item">
+                                <img class="img-bg" src="{{$prodotto["src"]}} " alt="">
+                            {{-- <a href="prodotti/show/{{$prodotto["id"]}}"> <h3> {{$prodotto["id"]}} </h3>  </a> --}}
+                            </li>
+                        @endforeach
 
-                @foreach ($tipopasta as $prodotto)
-                    <li>
-                        <img src="{{$prodotto["src"]}} " alt="">
-                    <a href="prodotti/show/{{$prodotto["id"]}}"> <h3> {{$prodotto["id"]}} </h3>  </a>
-                    </li>
+                </ul>
+
+
                 @endforeach
 
-               </ul>
-
-
-               @endforeach
-
-                   
-               @endif     
-            </section>
+                    
+                @endif     
+                </section>
+            </div>
         </div>
     </main>
 

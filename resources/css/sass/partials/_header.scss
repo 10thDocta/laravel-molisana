@@ -27,7 +27,7 @@ header {
             li {
                 font-size: 26px;
                 &:hover {
-                    background-color: aqua;
+                    background-color: $active;
                 }
             }
         }
