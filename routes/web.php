@@ -46,13 +46,19 @@ Route::get('/prodotti', function () {
 })->name('prodotti');
 
 
+
 Route::get('/prodotti/show/{id}', function ($id) {
 
-    $data = config("pasta.$id");
-    // dd($data);
+    $data = config("pasta");
+ 
+    if($data[$id] == NULL) {
+        abort(404);
+    }
 
-    return view('prodotto', ['prodotto' => $data, 'id' => $id]);
-})->name('prodotto');
+    $length = count($data);
+
+    return view('prodotto', ['prodotto' => $data[$id], 'id' => $id, 'length' => $length]);
+})->name('dettaglio-prodotto')->where('id', '[0-9]+');
 
 
 Route::get('/news', function () {
