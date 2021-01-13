@@ -1,0 +1,36 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+// Partials
+@import "Partials/variables";
+@import "Partials/extensions";
+
+@import "Partials/header";
+@import "Partials/main";
+@import "Partials/footer";
+
+@import "Partials/product";
+
+// Page settings
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $mainFont;
+}
+
+main.no-bg {
+    background-image: none;
+    background-color: #b8dae6;
+}
+
+.container {
+    width: $containerWidth;
+    margin: auto;
+}

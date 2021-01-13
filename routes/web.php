@@ -13,54 +13,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// })->name('home');
 
 Route::get('/', function () {
-
-    $data = config('pasta');
-    $paste = [];
-
-    foreach ($data as $key => $prodotto) {
-        $prodotto['id'] = $key;
-        $paste[$prodotto['tipo']][] = $prodotto;
-    }
-
-    return view('index', ['paste' => $paste]);
-
-})->name('home');
+    return redirect()->route('prodotti');
+})->name("home");
 
 
 Route::get('/prodotti', function () {
-
     $data = config('pasta');
-    $paste = [];
+
+    $pasta = [];
 
     foreach ($data as $key => $prodotto) {
-        $prodotto['id'] = $key;
-        $paste[$prodotto['tipo']][] = $prodotto;
+        // Aggiungiamo una chiave "id" con l'indice "$key" come valore
+        $prodotto["id"] = $key;
+        // Aggiungiamo in ogni prodotto una chiave "categoria"
+        if ($prodotto["tipo"] == "lunga") {
+            $prodotto["categoria"] = "Le Lunghe";
+        } elseif ($prodotto["tipo"] == "corta") {
+            $prodotto["categoria"] = "Le Corte";
+        } elseif ($prodotto["tipo"] == "cortissima") {
+            $prodotto["categoria"] = "Le Cortissime";
+        }
+        // Pushiamo il prodotto con le chiavi nuove nel nuovo array $pasta
+        $pasta[$prodotto["tipo"]][] = $prodotto;
     }
 
-    return view('prodotti', ['paste' => $paste]);
-})->name('prodotti');
+    return view('Partial_pages.prodotti', ["pasta" => $pasta]);
+})->name("prodotti");
 
-
-
-Route::get('/prodotti/show/{id}', function ($id) {
-
+Route::get('/prodotto/show/{id}', function ($id) {
     $data = config("pasta");
- 
-    if($data[$id] == NULL) {
+    if ($data[$id] == null) {
         abort(404);
     }
-
     $length = count($data);
-
-    return view('prodotto', ['prodotto' => $data[$id], 'id' => $id, 'length' => $length]);
-})->name('dettaglio-prodotto')->where('id', '[0-9]+');
-
+    return view('Partial_pages.prodotto_singolo', ["pasta" => $data[$id], "id" => $id, "length" => $length]);
+})->name("prodotto");
 
 Route::get('/news', function () {
-    return view('news');
-})->name('news');
+    return view('Partial_pages.news');
+})->name("news");
